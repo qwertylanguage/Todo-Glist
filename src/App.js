@@ -5,7 +5,7 @@ import {Button} from './Button'
 
 const App = () => {
   const [list, setList] = useState([])
-  const [input, setInput] = useState()
+  const [input, setInput] = useState('')
 
   useEffect(() => {
     if (!localStorage.getItem('data')) {
@@ -65,15 +65,17 @@ const App = () => {
 
       <div style={{
         display: 'flex',
-
+        alignItems: 'center'
       }}>
       <Input
         style={{
+          width: '100%',
+          margin: '8px'
         }}
         value={input}
         onChange={inputOnChange}
       />
-      <Button text={'Dobavit'} onClick={addItem}/>
+      <Button isDisabled={input.length === 0} text={'Добавить'} onClick={addItem}/>
       {list.length === 0 && <p>List is empty!</p>}
 
       </div>

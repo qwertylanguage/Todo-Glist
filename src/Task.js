@@ -44,7 +44,7 @@ export const Task = (props) => {
           borderRadius:'3px',
           border: 'none'
         }}
-        text={'Ydalit'}
+        text={'Удалить'}
         onClick={() => props.delete(props.index)}
       />
     </div>
