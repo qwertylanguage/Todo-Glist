@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+button:hover {
+   transform: scale(1.1);
+}
+
+button {
+  transition: .1s;
+}
+
+button:disabled {
+  opacity: 50%;
+}
+
+button:disabled:hover {
+  transform: none;
+}

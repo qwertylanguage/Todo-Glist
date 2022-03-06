@@ -11,15 +11,12 @@ export const Task = (props) => {
       alignItems: 'center',
       justifyContent: 'space-between'
     }}>
-
       <div style={{
         display: 'flex',
         alignItems: 'center'
       }}>
         <input
-          style={{
-
-          }}
+          style={{}}
           type={'checkbox'}
           checked={props.isReady}
           onChange={() => props.onChange

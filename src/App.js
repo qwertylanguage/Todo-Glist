@@ -62,23 +62,34 @@ const App = () => {
       width: '600px',
       paddingTop: '15px',
     }}>
-
       <div style={{
         display: 'flex',
         alignItems: 'center'
       }}>
-      <Input
-        style={{
-          width: '100%',
-          margin: '8px'
-        }}
-        value={input}
-        onChange={inputOnChange}
-      />
-      <Button isDisabled={input.length === 0} text={'Добавить'} onClick={addItem}/>
-      {list.length === 0 && <p>List is empty!</p>}
-
+        <Input
+          style={{
+            width: '100%',
+            margin: '8px'
+          }}
+          value={input}
+          onChange={inputOnChange}
+        />
+        <Button
+            style={{
+              backgroundColor: 'blue',
+              background: 'blue',
+              padding: '4px',
+              color: 'white',
+              borderRadius:'3px',
+              border: 'none'
+            }}
+            isDisabled={input.length === 0}
+            text={'Добавить'}
+            onClick={addItem}
+        />
       </div>
+
+      {list.length === 0 && <p>List is empty!</p>}
 
       {list.length > 0 && list.map((item, index) => {
         return <Task text={item.text} delete={deleteItem} index={index} isReady={item.isReady} onChange={onChange}/>
