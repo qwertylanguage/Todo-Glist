@@ -43,11 +43,7 @@ export const Task = (props) => {
 
             <Button
                 style={{
-                    background: props.isReady ? '#ec644b' : '#4193a9',
-                    padding: '4px',
-                    color: 'white',
-                    borderRadius:'3px',
-                    border: 'none'
+                    background: props.isReady ? '#ec644b' : '#4193a9'
                 }}
                 text={'Удалить'}
                 onClick={() => props.delete(props.index)}

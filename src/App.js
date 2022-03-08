@@ -91,12 +91,7 @@ const App = () => {
             style={{
                 position:'absolute',
                 top:'32px',
-                left:'20px',
-                background: '#4193a9',
-                padding: '4px',
-                color: 'white',
-                borderRadius:'3px',
-                border: 'none'
+                left:'20px'
             }}
             text={'Сменить фон'}
         />
@@ -120,11 +115,6 @@ const App = () => {
                 <Button
                     onClick={submitUrl}
                     style={{
-                        background: '#4193a9',
-                        padding: '4px',
-                        color: 'white',
-                        borderRadius:'3px',
-                        border: 'none',
                         marginLeft: '8px'
                     }}
                     text={'Подтвердить'}/>
@@ -149,13 +139,6 @@ const App = () => {
                     onChange={inputOnChange}
                 />
                 <Button
-                    style={{
-                        background: '#4193a9',
-                        padding: '4px',
-                        color: 'white',
-                        borderRadius:'3px',
-                        border: 'none'
-                    }}
                     isDisabled={input.length === 0}
                     text={'Добавить'}
                     onClick={addItem}
