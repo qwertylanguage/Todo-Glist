@@ -21,7 +21,7 @@ const App = () => {
 
   const addItem = () => {
     setList((prev) => {
-      const data = [...prev, {text: input, isReady: false}]
+      const data = [...prev, {text: input, isReady: false, createdAt: String(new Date().toUTCString())}]
 
       localStorage.setItem('data', JSON.stringify(data))
       return data
@@ -41,7 +41,7 @@ const App = () => {
     setList((prev) => {
       const data = prev.map((item, i) => {
         if (index === i) {
-          return {text: item.text, isReady: !item.isReady}
+          return {...item, isReady: !item.isReady}
         } else {
           return item
         }
@@ -69,14 +69,15 @@ const App = () => {
         <Input
           style={{
             width: '100%',
-            margin: '8px'
+            margin: '8px',
+            padding: '8px'
           }}
           value={input}
           onChange={inputOnChange}
         />
         <Button
             style={{
-              backgroundColor: 'blue',
+              backgroundColor: '#4193a9',
               background: 'blue',
               padding: '4px',
               color: 'white',
@@ -92,7 +93,7 @@ const App = () => {
       {list.length === 0 && <p>List is empty!</p>}
 
       {list.length > 0 && list.map((item, index) => {
-        return <Task text={item.text} delete={deleteItem} index={index} isReady={item.isReady} onChange={onChange}/>
+        return <Task createdAt={item.createdAt} text={item.text} delete={deleteItem} index={index} isReady={item.isReady} onChange={onChange}/>
       })}
     </div>
   </div>
