@@ -84,7 +84,7 @@ const App = () => {
         display: 'flex',
         justifyContent: 'center',
         background: `url("${background}") no-repeat center center fixed`,
-        backgroundSize: 'cover'
+        backgroundSize: 'cover',
     }}>
         <Button
             onClick={openModal}
@@ -104,6 +104,7 @@ const App = () => {
                 padding: '25px',
                 zIndex: 999,
             }}>
+                <p>Введите URL картинки</p>
                 <input
                     value={backgroundUrl}
                     type={'text'}
